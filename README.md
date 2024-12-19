@@ -27,7 +27,7 @@ This project demonstrates loading and rendering an apple model from Blender usin
 
 - Name: Mochammad Zharif Asyam Marzuqi
 - NRP: 5025221163
-- Class: Grafkom - D
+- Class: Grafkom - E
 
 ## References
 
