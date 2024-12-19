@@ -4,13 +4,62 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WebGL OBJ Loader</title>
-    <!-- <script src="webgl-utils.js"></script>
-    <script src="m4.js"></script> -->
-  </head>
-  <body>
-    <canvas id="canvas" width="800" height="600"></canvas>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="util.js"></script>
+    <script src="IOhandler.js"></script>
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center h-screen">
+  <div>
+    <h1 class="text-3xl font-bold mb-5">
+      Apple in WebGL ( by Zharif )
+    </h1>
+  </div>
+    <div id="controls" class="flex flex-col items-start ">
+      <!-- Add slider controls for light direction -->
+       <div class="flex">
+
+         <div class="flex items-center mb-2">
+           <label for="lightX" class="mr-2 font-bold">Light X:</label>
+           <input type="range" id="lightX" min="-10" max="10" value="-3" step="0.1" class="w-48 mr-5">
+         </div>
+         <div class="flex items-center mb-2">
+           <label for="lightY" class="mr-2 font-bold">Light Y:</label>
+           <input type="range" id="lightY" min="-10" max="10" value="-2" step="0.1" class="w-48 mr-5">
+         </div>
+         <div class="flex items-center mb-2">
+           <label for="lightZ" class="mr-2 font-bold">Light Z:</label>
+           <input type="range" id="lightZ" min="-10" max="10" value="-2" step="0.1" class="w-48 mr-5">
+         </div>
+       </div>
+      
+      <!-- Add new sliders for lighting parameters -->
+      <div class="flex items-center mb-2">
+        <label for="ambientStrength" class="mr-2 font-bold">Ambient Strength:</label>
+        <input type="range" id="ambientStrength" min="0" max="1" value="0.3" step="0.05" class="w-48 mr-5">
+      </div>
+      <div class="flex items-center mb-2">
+        <label for="specularStrength" class="mr-2 font-bold">Specular Strength:</label>
+        <input type="range" id="specularStrength" min="0" max="1" value="0.2" step="0.05" class="w-48 mr-5">
+      </div>
+      <div class="flex items-center mb-2">
+        <label for="rotationToggle" class="mr-2 font-bold">Enable Rotation:</label>
+        <label class="relative inline-flex items-center cursor-pointer">
+          <input type="checkbox" id="rotationToggle" class="sr-only peer">
+          <div class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+        </label>
+      </div>
+    </div>
+    <div>
+      <canvas id="canvas" width="650" height="500" class="border border-gray-300 bg-white"></canvas>
+    </div>
+    <div>
+      <h1 class="text-md mb-5">
+        Reference : <a href="https://webglfundamentals.org/">WebGL Fundamentals</a>
+      </h1>
+    </div>
+    <script src="https://webglfundamentals.org/webgl/resources/m4.js"></script>
     <script src="object.js"></script>
-    <script src="matrix.js"></script>
     <script src="main.js"></script>
-  </body>
+</body>
 </html>
